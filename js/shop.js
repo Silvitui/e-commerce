@@ -162,9 +162,26 @@ const printCart = () => {
 // ** Nivell II **
 
 // Exercise 7
-function removeFromCart(id) {
+const  removeFromCart = (idProduct) =>  {
+    const productIndex = cart.findIndex((product) => product.id === idProduct);
 
-}
+    if (productIndex !== -1) {
+      const product = cart[productIndex];
+  
+      if (product.quantity > 1) {
+        product.quantity -= 1;
+      } else {
+        cart.splice(productIndex, 1);
+      }
+      calculateTotal();
+      applyPromotionsCart(); 
+      printCart(); 
+    } else {
+      console.warn(`Product with ID ${id} not found in the cart.`);
+    }
+  }
+  
+ 
 
 function open_modal() {
     printCart();
