@@ -94,9 +94,17 @@ const buy = (idProduct) => {
   };
 
 // Exercise 2
-function cleanCart() {
 
-}
+const cleanCart = () => {
+    if (cart.length === 0) {
+      console.log("The cart is already empty");
+    } else {
+      cart.length = 0; 
+      console.log("The cart has been emptied");
+    }
+
+    printCart()
+  };
 
 // Exercise 3
 function calculateTotal() {
