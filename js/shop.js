@@ -114,10 +114,27 @@ const calculateTotal = () => {
 }
 
 // Exercise 4
-function applyPromotionsCart() {
-    // Apply promotions to each item in the array "cart"
-}
-
+const applyPromotionsCart = () => {
+    const oilDiscount = 0.80; 
+    const cupcakeDiscount = 0.70; 
+    let discountPrice = 0;
+  
+    cart.forEach((product) => {
+      if (product.id === 1 && product.quantity >= 3) {
+        discountPrice = product.price * oilDiscount;
+        product.subtotalWithDiscount = discountPrice * product.quantity;
+      } else if (product.id === 3 && product.quantity >= 10) {
+      discountPrice = product.price * cupcakeDiscount;
+        product.subtotalWithDiscount = discountPrice * product.quantity;
+      } else {
+      
+        delete product.subtotalWithDiscount;
+      }
+    });
+  
+    console.log("Cart after applying promotions:", cart);
+  };
+  
 // Exercise 5
 function printCart() {
     // Fill the shopping cart modal manipulating the shopping cart dom
