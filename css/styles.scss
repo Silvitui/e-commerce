@@ -1,0 +1,43 @@
+
+$primary-color: #69c48c;
+$secondary-color: #dbdde0;
+$text-color: #fff; 
+
+  
+.bg-dark {
+  background: linear-gradient(135deg, $primary-color, $secondary-color); 
+  text-align: center;
+  
+}
+
+
+.card {
+  background: linear-gradient(135deg, $primary-color, $secondary-color); // Degradado primario
+  border: #222;
+  border-radius: 12px;
+  color: $text-color;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px #312f2f; 
+
+  &:hover {
+    transform: translateY(10px); 
+    box-shadow: 0 8px 16px #000000; 
+  }
+
+  .card-body {
+    text-align: center;
+
+    h5 {
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+}
+
+
+footer {
+  background-color: $secondary-color; 
+  color: $text-color;
+  text-align: center
+
+}

@@ -89,7 +89,7 @@ const buy = (idProduct) => {
     }
   
     console.log("Updated cart:", cart);
-
+    updateCartCounter();
 
   };
 
