@@ -75,10 +75,23 @@ var cart = [];
 var total = 0;
 
 // Exercise 1
-function buy(id) {
-    // 1. Loop for to the array products to get the item to add to cart
-    // 2. Add found product to the cart array
-}
+const buy = (idProduct) => {
+    const product = products.find((product) => product.id === idProduct);
+    let productInCart = cart.find((item) => item.id === idProduct);
+  
+    if (!product) {
+      console.error(`The product with the ID ${idProduct} doesn't exist`);
+    
+    } else if (productInCart) {
+      productInCart.quantity += 1; 
+    } else {
+      cart.push({ ...product, quantity: 1 }); 
+    }
+  
+    console.log("Updated cart:", cart);
+
+
+  };
 
 // Exercise 2
 function cleanCart() {
