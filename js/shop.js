@@ -136,9 +136,27 @@ const applyPromotionsCart = () => {
   };
   
 // Exercise 5
-function printCart() {
-    // Fill the shopping cart modal manipulating the shopping cart dom
-}
+const printCart = () => {
+    const cartTable = document.getElementById("cart_list");
+    const totalElement = document.getElementById("total_price");
+    let cartHTML = "";
+    let cartTotal = 0;
+  
+    for (const product of cart) {
+      const productTotal = product.price * product.quantity;
+      cartTotal += productTotal;
+      cartHTML += `
+        <tr class="cart-item">
+          <td>${product.name}</td>
+          <td>${product.price.toFixed(2)} €</td>
+          <td>${product.quantity}</td>
+          <td>${productTotal.toFixed(2)} €</td>
+        </tr>`;
+    }
+    cartTable.innerHTML = cartHTML;
+    totalElement.textContent = `${cartTotal.toFixed(2)} €`;
+  };
+  
 
 
 // ** Nivell II **
